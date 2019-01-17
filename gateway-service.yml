@@ -13,21 +13,9 @@ spring:
         locator:
           enabled: true
       routes:
-      - id: employee-service
-        uri: lb://employee-service
+      - id: master
+        uri: http://localhost:8091
         predicates:
-        - Path=/employee/**
+        - Path=/test/**
         filters:
-        - RewritePath=/employee/(?<path>.*), /$\{path}
-      - id: department-service
-        uri: lb://department-service
-        predicates:
-        - Path=/department/**
-        filters:
-        - RewritePath=/department/(?<path>.*), /$\{path}
-      - id: organization-service
-        uri: lb://organization-service
-        predicates:
-        - Path=/organization/**
-        filters:
-        - RewritePath=/organization/(?<path>.*), /$\{path}      
+        
