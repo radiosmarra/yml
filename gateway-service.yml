@@ -16,6 +16,6 @@ spring:
       - id: master
         uri: lb://master
         predicates:
-        - Path=/test/**
+        - Path=/master/**
         filters:
         
